@@ -26,8 +26,8 @@ public class BookStore {
         }
 
         if (book instanceof IShippable shippable) {
-            if (shippable.isAvailable(quantity)) {
-                throw new IllegalArgumentException("Insufficient stock");
+            if (!shippable.isAvailable(quantity)) {
+                throw new IllegalArgumentException(String.format("insufficient stock for %s. available stock: %d, requested stock: %d", book.getTitle(), shippable.getStock(), quantity));
             }
             shippable.reduceStock(quantity);
             ShippingService.ship(book, quantity, address);

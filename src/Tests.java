@@ -9,6 +9,11 @@ public class Tests {
         runRemoveBookTest();
         runRemoveNonExistentBookTest();
         runRemovingOutDatedBooksTest();
+        runBuyShippableBookTest();
+        runBuyDigitalBookTest();
+        runBuyNonPurchasableBookTest();
+        runBuyNonExistentBookTest();
+        runBuyOutOfStockBookTest();
     }
 
     public static void runAddBookTest() {
@@ -104,4 +109,79 @@ public class Tests {
             System.out.println("Test failed: " + e.getMessage());
         }
     }
+
+    public static void runBuyShippableBookTest() {
+        System.out.println("\n------ Buy Shippable Book Test ------");
+        try {
+            BookStore store = new BookStore();
+            PaperBook book = new PaperBook("1234567890", "Paper Book", Year.now().getValue(), 10.0, 10, 1.0);
+            store.addBook(book);
+            System.out.println("Book added" + book);
+            store.buyBook(book.getIsbn(), 3, "john.doe@eample.com", "John Doe's Address");
+            System.out.println("Book bought successfully: " + book);
+        }
+        catch (Exception e) {
+            System.out.println("Failed to buy book: " + e.getMessage());
+        }
+    }
+
+    public static void runBuyDigitalBookTest() {
+        System.out.println("\n------ Buy Digital Book Test ------");
+        try {
+            BookStore store = new BookStore();
+            EBook book = new EBook("1234567890", "EBook", Year.now().getValue(), 10.0, "PDF");
+            store.addBook(book);
+            System.out.println("Book added" + book);
+            store.buyBook(book.getIsbn(), 3, "john.doe@example.com", "John Doe's Address");
+            System.out.println("Book bought successfully: " + book);
+        }
+        catch (Exception e) {
+            System.out.println("Failed to buy book: " + e.getMessage());
+        }
+    }
+
+    public static void runBuyNonPurchasableBookTest() {
+        System.out.println("\n------ Buy Non Purchasable Book Test ------");
+        try {
+            BookStore store = new BookStore();
+            ShowcaseBook book = new ShowcaseBook("1234567890", "Showcase Book", Year.now().getValue(), 10);
+            store.addBook(book);
+            System.out.println("Book added" + book);
+            store.buyBook(book.getIsbn(), 3, "john.doe@example.com", "John Doe's Address");
+            System.out.println("Book bought successfully: " + book);
+        }
+        catch (Exception e) {
+            System.out.println("Failed to buy book: " + e.getMessage());
+        }
+    }
+
+    public static void runBuyNonExistentBookTest() {
+        System.out.println("\n------ Buy Non Existent Book Test ------");
+        try {
+            BookStore store = new BookStore();
+            PaperBook book = new PaperBook("1234567890", "Non Existent Paper Book", Year.now().getValue(), 10.0, 10, 1.0);
+            System.out.println("Attempting to buy: " + book);
+            store.buyBook(book.getIsbn(), 3, "john.doe@example.com", "John Doe's Address");
+            System.out.println("Book bought successfully: " + book);
+        }
+        catch (Exception e) {
+            System.out.println("Failed to buy book: " + e.getMessage());
+        }
+    }
+
+    public static void runBuyOutOfStockBookTest() {
+        System.out.println("\n------ Buy Out Of Stock Book Test ------");
+        try {
+            BookStore store = new BookStore();
+            PaperBook book = new PaperBook("1234567890", "Out Of Stock Paper Book", Year.now().getValue(), 10.0, 0, 1.0);
+            store.addBook(book);
+            System.out.println("Book added: " + book);
+            store.buyBook(book.getIsbn(), 3, "john.doe@example.com", "John Doe's Address");
+            System.out.println("Book bought successfully: " + book);
+        }
+        catch (Exception e) {
+            System.out.println("Failed to buy book: " + e.getMessage());
+        }
+    }
+
 }
