@@ -14,7 +14,7 @@ An implementation for a Bookstore System that handles different types of books (
 
 ## Store Classes
 
-- `BookStore.java` - Main bookstore handling book addition, removal, and purchase operations.
+- `Bookstore.java` - Main bookstore handling book addition, removal, and purchase operations.
 
 - `Inventory.java` - Manages book inventory with ISBN-based storage and outdated book removal.
 

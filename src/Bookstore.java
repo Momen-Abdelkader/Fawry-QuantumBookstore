@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class BookStore {
+public class Bookstore {
     private final Inventory inventory = new Inventory();
 
     public void addBook(Book book) {

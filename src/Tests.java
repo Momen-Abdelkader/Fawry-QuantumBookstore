@@ -19,7 +19,7 @@ public class Tests {
     public static void runAddBookTest() {
         System.out.println("\n------ Add Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Added book", Year.now().getValue(), 10.0, 10, 1.0);
             store.addBook(book);
             System.out.println("Book added successfully: " + book);
@@ -32,7 +32,7 @@ public class Tests {
     public static void runCreateBookInvalidQuantityTest() {
         System.out.println("\n------ Create Book Invalid Invalid Quantity Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Added book", Year.now().getValue(), 10.0, -1, 1.0);
             store.addBook(book);
             System.out.println("Book added successfully: " + book);
@@ -45,7 +45,7 @@ public class Tests {
     public static void runCreateBookInvalidPriceTest() {
         System.out.println("\n------ Create Book Invalid Invalid Price Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Added book", Year.now().getValue(), -10.0, 10, 1.0);
             store.addBook(book);
             System.out.println("Book added successfully: " + book);
@@ -58,7 +58,7 @@ public class Tests {
     public static void runRemoveBookTest() {
         System.out.println("\n------ Remove Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Removed book", Year.now().getValue(), 10.0, 10, 1.0);
             store.addBook(book);
             System.out.println("Book added successfully: " + book);
@@ -73,7 +73,7 @@ public class Tests {
     public static void runRemoveNonExistentBookTest() {
         System.out.println("\n------ Remove Non Existent Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Non existent book", Year.now().getValue(), 10.0, 10, 1.0);
             System.out.println("Removing: " + book);
             store.removeBook(book);
@@ -87,7 +87,7 @@ public class Tests {
     public static void runRemovingOutDatedBooksTest() {
         System.out.println("\n------ Remove Outdated Books Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             int currentYear = Year.now().getValue();
             PaperBook outdatedBook = new PaperBook("1", "Outdated Book", currentYear - 20, 10.0, 5, 1.0);
             PaperBook outdatedBook2 = new PaperBook("2", "Outdated Book2", currentYear - 16, 10.0, 5, 1.0);
@@ -113,7 +113,7 @@ public class Tests {
     public static void runBuyShippableBookTest() {
         System.out.println("\n------ Buy Shippable Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Paper Book", Year.now().getValue(), 10.0, 10, 1.0);
             store.addBook(book);
             System.out.println("Book added" + book);
@@ -128,7 +128,7 @@ public class Tests {
     public static void runBuyDigitalBookTest() {
         System.out.println("\n------ Buy Digital Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             EBook book = new EBook("1234567890", "EBook", Year.now().getValue(), 10.0, "PDF");
             store.addBook(book);
             System.out.println("Book added" + book);
@@ -143,7 +143,7 @@ public class Tests {
     public static void runBuyNonPurchasableBookTest() {
         System.out.println("\n------ Buy Non Purchasable Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             ShowcaseBook book = new ShowcaseBook("1234567890", "Showcase Book", Year.now().getValue(), 10);
             store.addBook(book);
             System.out.println("Book added" + book);
@@ -158,7 +158,7 @@ public class Tests {
     public static void runBuyNonExistentBookTest() {
         System.out.println("\n------ Buy Non Existent Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Non Existent Paper Book", Year.now().getValue(), 10.0, 10, 1.0);
             System.out.println("Attempting to buy: " + book);
             store.buyBook(book.getIsbn(), 3, "john.doe@example.com", "John Doe's Address");
@@ -172,7 +172,7 @@ public class Tests {
     public static void runBuyOutOfStockBookTest() {
         System.out.println("\n------ Buy Out Of Stock Book Test ------");
         try {
-            BookStore store = new BookStore();
+            Bookstore store = new Bookstore();
             PaperBook book = new PaperBook("1234567890", "Out Of Stock Paper Book", Year.now().getValue(), 10.0, 0, 1.0);
             store.addBook(book);
             System.out.println("Book added: " + book);
