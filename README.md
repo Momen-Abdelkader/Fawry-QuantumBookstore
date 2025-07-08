@@ -48,6 +48,17 @@ This class contains methods for testing the store's functionality and validation
 - `runBuyNonExistentBookTest()` - Tests purchasing non-existent books
 - `runBuyOutOfStockBookTest()` - Tests purchasing out-of-stock books
 
+# Test Results Screenshots
+## Adding Books
+![image](https://github.com/user-attachments/assets/962a7918-e2d3-4c07-98cc-001dac15deea)
+
+## Removing Books
+![image](https://github.com/user-attachments/assets/ddc03411-b0a6-46a6-a3ae-4cf7089846ce)
+
+## Buying Books
+![image](https://github.com/user-attachments/assets/908f7cb9-4140-447c-8b04-c82fe8909472)
+
+
 
 # How to run the tests
 The tests cover all critical system operations including:
