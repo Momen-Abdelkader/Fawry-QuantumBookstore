@@ -1,10 +1,21 @@
 public class PaperBook extends Book implements IShippable {
     private int stock;
-    private int weight;
+    private double weight;
 
-    public PaperBook(String isbn, String title, int year, double price, int stock) {
+    public PaperBook(String isbn, String title, int year, double price, int stock, double weight) {
         super(isbn, title, year, price);
+
+        if (stock < 0) {
+            throw new IllegalArgumentException("Stock cannot be negative.");
+        }
+
         this.stock = stock;
+
+        if (weight <= 0) {
+            throw new IllegalArgumentException("Weight must be greater than 0");
+        }
+
+        this.weight = weight;
     }
 
     @Override
