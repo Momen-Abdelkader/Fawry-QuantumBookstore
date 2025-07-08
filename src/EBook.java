@@ -1,5 +1,5 @@
-public class EBook extends Book implements IEmailable {
-    private final String fileType;
+public class EBook extends Book implements IDigital {
+    private String fileType;
 
     public EBook(String isbn, String title, int year, double price, String fileType) {
         super(isbn, title, year, price);
@@ -9,5 +9,10 @@ public class EBook extends Book implements IEmailable {
     @Override
     public String getFileType() {
         return fileType;
+    }
+
+    @Override
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
 }
