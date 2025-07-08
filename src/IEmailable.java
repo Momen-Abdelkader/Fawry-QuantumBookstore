@@ -1,3 +1,3 @@
-public interface Emailable {
+public interface IEmailable {
     public String getFileType();
 }

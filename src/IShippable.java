@@ -1,4 +1,4 @@
-public interface Shippable {
+public interface IShippable {
     public int getStock();
     public void setStock(int stock);
     public void reduceStock(int quantity);
