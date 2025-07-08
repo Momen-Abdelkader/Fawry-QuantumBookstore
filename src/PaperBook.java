@@ -51,6 +51,11 @@ public class PaperBook extends Book implements IShippable {
     }
 
     @Override
+    public boolean isAvailable(int requestedQuantity) {
+        return stock >= requestedQuantity;
+    }
+
+    @Override
     public double getWeight() {
         return weight;
     }
