@@ -59,4 +59,9 @@ public class PaperBook extends Book implements IShippable {
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " -> PaperBook [stock=" + stock + ", weight=" + weight + "]";
+    }
 }

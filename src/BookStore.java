@@ -7,6 +7,10 @@ public class BookStore {
         inventory.addBook(book);
     }
 
+    public void removeBook(Book book) {
+        inventory.removeBook(book);
+    }
+
     public List<Book> removeOutDatedBooks(int maxYearsPassed) {
         return inventory.removeOutDatedBooks(maxYearsPassed);
     }

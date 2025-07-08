@@ -1,8 +1,5 @@
 import java.time.Year;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Inventory {
     private final Map<String, Book> inventory = new HashMap<>(); // ISBN -> Book
@@ -50,11 +47,15 @@ public class Inventory {
     public List<Book> removeOutDatedBooks(int maxYearsPassed) {
         int currentYear = Year.now().getValue();
         List<Book> outdatedBooks = new ArrayList<>();
-        for (Book book : inventory.values()) {
+        Iterator<Map.Entry<String, Book>> iterator = inventory.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Book> entry = iterator.next();
+            Book book = entry.getValue();
             int yearsPassed = currentYear - book.getYear();
+
             if (yearsPassed > maxYearsPassed) {
                 outdatedBooks.add(book);
-                removeBook(book);
+                iterator.remove();
             }
         }
         return outdatedBooks;

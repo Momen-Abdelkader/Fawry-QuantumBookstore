@@ -15,4 +15,9 @@ public class EBook extends Book implements IDigital {
     public void setFileType(String fileType) {
         this.fileType = fileType;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " -> EBook [fileType=" + fileType + "]";
+    }
 }

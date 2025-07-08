@@ -7,5 +7,10 @@ class ShowcaseBook extends Book {
     public boolean isPurchasable() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " -> Showcase Book";
+    }
 }
 

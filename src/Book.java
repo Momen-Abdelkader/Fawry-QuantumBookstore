@@ -8,7 +8,7 @@ public abstract class Book {
         this.isbn = isbn;
         this.title = title;
         this.year = year;
-        this.price = price;
+        setPrice(price);
     }
 
     public String getIsbn() {
@@ -37,5 +37,15 @@ public abstract class Book {
 
     public boolean isPurchasable() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", price=" + price +
+                '}';
     }
 }
