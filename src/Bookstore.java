@@ -32,7 +32,8 @@ public class Bookstore {
             shippable.reduceStock(quantity);
             ShippingService.ship(book, quantity, address);
         }
-        else if (book instanceof IDigital emailable) {
+
+        if (book instanceof IDigital emailable) {
             MailService.sendEmail(book, email, emailable.getFileType());
         }
 
