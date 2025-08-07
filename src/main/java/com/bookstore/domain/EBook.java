@@ -1,3 +1,7 @@
+package com.bookstore.domain;
+
+import com.bookstore.interfaces.IDigital;
+
 public class EBook extends Book implements IDigital {
     private String fileType;
 

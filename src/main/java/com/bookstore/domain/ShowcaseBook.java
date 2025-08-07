@@ -1,4 +1,6 @@
-class ShowcaseBook extends Book {
+package com.bookstore.domain;
+
+public class ShowcaseBook extends Book {
     public ShowcaseBook(String isbn, String title, int year, double price) {
         super(isbn, title, year, price);
     }

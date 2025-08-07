@@ -1,3 +1,5 @@
+package com.bookstore.interfaces;
+
 public interface IShippable {
     public int getStock();
     public void setStock(int stock);

@@ -1,3 +1,5 @@
+package com.bookstore.domain;
+
 public abstract class Book {
     protected final String isbn;
     protected final String title;

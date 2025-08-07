@@ -1,3 +1,7 @@
+package com.bookstore;
+
+import com.bookstore.domain.*;
+
 import java.time.Year;
 import java.util.List;
 

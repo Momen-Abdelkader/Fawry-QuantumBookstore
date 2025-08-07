@@ -1,3 +1,7 @@
+package com.bookstore.domain;
+
+import com.bookstore.interfaces.IShippable;
+
 public class PaperBook extends Book implements IShippable {
     private int stock;
     private double weight;

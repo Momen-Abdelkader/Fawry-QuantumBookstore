@@ -1,3 +1,10 @@
+package com.bookstore.domain;
+
+import com.bookstore.interfaces.IDigital;
+import com.bookstore.interfaces.IShippable;
+import com.bookstore.services.MailService;
+import com.bookstore.services.ShippingService;
+
 import java.util.List;
 
 public class Bookstore {

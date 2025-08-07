@@ -30,5 +30,6 @@ bin/
 
 ### Project Files ###
 .idea/
+target/
 **/*.iml
 src/*.java~
